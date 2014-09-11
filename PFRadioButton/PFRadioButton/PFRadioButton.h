@@ -12,17 +12,20 @@
 
 /**
  *  @brief 实现按钮点击事件
- *  @param radioButton: 按钮
- *  @param textLabel: 文本
+ *  @param title: 按钮的文本
  *  @param index: 序号
  */
-- (void)radioButton:(UIButton *)radioButton textLabel:(UILabel *)textLabel didSelectItemAtIndex:(NSInteger)index;
+- (void)radioButtonWithTitle:(NSString *)title didSelectItemAtIndex:(NSInteger)index;
 
 @end
 
 @interface PFRadioButton : UIView
 
-@property (nonatomic, weak) id<PFRadioButtonDelegate> delegate;
+///单选按钮
+@property (nonatomic, strong)   UIButton *radioButton;
+
+///代理
+@property (nonatomic, weak)     id<PFRadioButtonDelegate> delegate;
 
 /**
  *  @brief 初始化单选按钮
@@ -33,10 +36,9 @@
 
 /**
  *  @brief 实现按钮点击事件
- *  @param radioButton: 按钮
- *  @param textLabel: 文本
+ *  @param title: 按钮的文本
  *  @param index: 序号
  */
-- (void)didSelectItemAtIndexUsingBlock:(void (^)(UIButton *radioButton, UILabel *textLabel, NSUInteger index))block;
+- (void)radioButtonWithTitleDidSelectItemAtIndexUsingBlock:(void (^)(NSString *title, NSUInteger index))block;
 
 @end
