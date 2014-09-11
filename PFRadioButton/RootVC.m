@@ -29,8 +29,7 @@
     [super viewDidLoad];
 
     PFRadioButton *radioButton = [[PFRadioButton alloc] initWithFrame:CGRectMake(0, 50, 320, 80) number:3 textArray:@[@"abc", @"123", @"一二三"]];
-    [radioButton.radioButton setTitleColor:[UIColor lightGrayColor] forState:UIControlStateNormal];
-    [radioButton radioButtonWithTitleDidSelectItemAtIndexUsingBlock:^(NSString *title, NSUInteger index) {
+    [radioButton didSelectItemAtIndexUsingBlock:^(NSString *title, NSUInteger index) {
         NSLog(@"%@%d", title, index);
     }];
     [self.view addSubview:radioButton];
