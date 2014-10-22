@@ -7,8 +7,7 @@
 //
 
 #import "PFRadioButton.h"
-
-static const NSUInteger kRadioButtonHeight = 22;
+#import "PFImageTextButton.h"
 
 static const NSMutableArray *radioButtonCount;
 static const NSMutableArray *titleCount;
@@ -17,7 +16,7 @@ typedef void (^tapBlock)(NSString *, NSUInteger);
 
 @interface PFRadioButton ()
 {
-    UIButton *radioButton;  //单选按钮
+    PFImageTextButton *radioButton;  //单选按钮
 }
 
 ///点击事件
@@ -37,26 +36,13 @@ typedef void (^tapBlock)(NSString *, NSUInteger);
         titleCount = [[NSMutableArray alloc] init];
 
         for (int i = 0; i < number; i++) {//创建按钮和文本
-            radioButton = [UIButton buttonWithType:UIButtonTypeCustom];
-            radioButton.frame = CGRectMake(self.bounds.origin.x, self.bounds.origin.y + i * 25, frame.size.width, kRadioButtonHeight);
-
-            //正常
-            [radioButton setImage:[UIImage imageWithContentsOfFile:[[NSBundle mainBundle] pathForResource:@"images.bundle/RadioButton-Normal" ofType:@"png"]] forState:UIControlStateNormal];
-            [radioButton setTitle:textArray[i] forState:UIControlStateNormal];
-            [radioButton setTitleColor:[UIColor lightGrayColor] forState:UIControlStateNormal];
-
-            //选中
-            [radioButton setImage:[UIImage imageWithContentsOfFile:[[NSBundle mainBundle] pathForResource:@"images.bundle/RadioButton-Selected" ofType:@"png"]] forState:UIControlStateSelected];
-            [radioButton setTitle:textArray[i] forState:UIControlStateSelected];
-            [radioButton setTitleColor:[UIColor blackColor] forState:UIControlStateSelected];
-
-            //按钮内容居左显示（默认为居中）
-            radioButton.contentHorizontalAlignment = UIControlContentHorizontalAlignmentLeft;
-
-            radioButton.titleLabel.font = [UIFont systemFontOfSize:15];
+            radioButton = [[PFImageTextButton alloc] initWithFrame:CGRectMake(0, self.bounds.origin.y + i * 25, 200, 15) imageFrame:CGRectMake(0, 0, 14, 14) textFrame:CGRectMake(15, 0, 200, 15)];
+            radioButton.text = textArray[i];
             radioButton.tag = i;
-            if (i == 0) radioButton.selected = YES;
-            [radioButton addTarget:self action:@selector(buttonTap:) forControlEvents:UIControlEventTouchUpInside];
+            if (i == 0) radioButton.state = PFImageTextButtonStateSelected;
+            [radioButton didSelect:^(PFImageTextButton *button) {
+                [self buttonTap:button];
+            }];
             [radioButtonCount addObject:radioButton];
             [titleCount addObject:textArray[i]];
             [self addSubview:radioButton];
@@ -67,8 +53,8 @@ typedef void (^tapBlock)(NSString *, NSUInteger);
 
 #pragma mark - Events Methods
 
-//按钮点击事件
-- (void)buttonTap:(UIButton *)button
+//点击事件
+- (void)buttonTap:(PFImageTextButton *)button
 {
     if (!self.delegate && self.tapBlock) {//监听块并回调
         self.tapBlock(titleCount[button.tag], button.tag);
@@ -77,10 +63,10 @@ typedef void (^tapBlock)(NSString *, NSUInteger);
     }
 
     for (int i = 0; i < radioButtonCount.count; i++) {//获取被点击的按钮
-        UIButton *button = [radioButtonCount objectAtIndex:i];
-        button.selected = NO;
+        PFImageTextButton *button = [radioButtonCount objectAtIndex:i];
+        button.state = PFImageTextButtonStateNormal;
     }
-    button.selected = YES;
+    button.state = PFImageTextButtonStateSelected;
 }
 
 #pragma mark - Public Methods

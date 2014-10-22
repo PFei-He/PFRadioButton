@@ -7,7 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		CE86555819B70EC7009D6947 /* images.bundle in Resources */ = {isa = PBXBuildFile; fileRef = CE86555719B70EC7009D6947 /* images.bundle */; };
+		CE38C49C19F7B3C700E9D6E7 /* PFImageTextButton.m in Sources */ = {isa = PBXBuildFile; fileRef = CE38C49B19F7B3C700E9D6E7 /* PFImageTextButton.m */; };
 		CEE600C819B70BFD00353AA7 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CEE600C719B70BFD00353AA7 /* Foundation.framework */; };
 		CEE600CA19B70BFD00353AA7 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CEE600C919B70BFD00353AA7 /* CoreGraphics.framework */; };
 		CEE600CC19B70BFD00353AA7 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CEE600CB19B70BFD00353AA7 /* UIKit.framework */; };
@@ -35,7 +35,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		CE86555719B70EC7009D6947 /* images.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = images.bundle; sourceTree = "<group>"; };
+		CE38C49A19F7B3C700E9D6E7 /* PFImageTextButton.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PFImageTextButton.h; sourceTree = "<group>"; };
+		CE38C49B19F7B3C700E9D6E7 /* PFImageTextButton.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PFImageTextButton.m; sourceTree = "<group>"; };
 		CEE600C419B70BFD00353AA7 /* PFRadioButton.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = PFRadioButton.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		CEE600C719B70BFD00353AA7 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		CEE600C919B70BFD00353AA7 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
@@ -158,9 +159,10 @@
 		CEE600F619B70C3700353AA7 /* PFRadioButton */ = {
 			isa = PBXGroup;
 			children = (
-				CE86555719B70EC7009D6947 /* images.bundle */,
 				CEE600F719B70C5E00353AA7 /* PFRadioButton.h */,
 				CEE600F819B70C5E00353AA7 /* PFRadioButton.m */,
+				CE38C49A19F7B3C700E9D6E7 /* PFImageTextButton.h */,
+				CE38C49B19F7B3C700E9D6E7 /* PFImageTextButton.m */,
 			);
 			path = PFRadioButton;
 			sourceTree = "<group>";
@@ -241,7 +243,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				CEE600D219B70BFD00353AA7 /* InfoPlist.strings in Resources */,
-				CE86555819B70EC7009D6947 /* images.bundle in Resources */,
 				CEE600DA19B70BFD00353AA7 /* Images.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -261,6 +262,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				CE38C49C19F7B3C700E9D6E7 /* PFImageTextButton.m in Sources */,
 				CEE600FC19B70C8A00353AA7 /* RootVC.m in Sources */,
 				CEE600D819B70BFD00353AA7 /* AppDelegate.m in Sources */,
 				CEE600D419B70BFD00353AA7 /* main.m in Sources */,
