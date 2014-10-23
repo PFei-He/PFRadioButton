@@ -29,6 +29,9 @@ typedef enum {
 ///按钮文字
 @property (nonatomic, copy)     NSString                *text;
 
+///按钮是否被选中
+@property (nonatomic, assign)   BOOL                    selected;
+
 ///按钮状态
 @property (nonatomic, assign)   PFMixButtonState        state;
 

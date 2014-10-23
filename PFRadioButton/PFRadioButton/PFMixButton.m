@@ -75,6 +75,14 @@ typedef void(^tapBlock)(PFMixButton *);
     textLabel.text = text;
 }
 
+//按钮是否被选中的setter方法
+- (void)setSelected:(BOOL)selected
+{
+    _selected = selected;
+    if (selected) self.state = PFMixButtonStateSelected;
+    else self.state = PFMixButtonStateNormal;
+}
+
 //按钮状态的setter方法
 - (void)setState:(PFMixButtonState)state
 {
@@ -130,9 +138,6 @@ typedef void(^tapBlock)(PFMixButton *);
 {
     //设置不透明度
     _circleLayer.opacity = 1.0f;
-
-    //设置选择状态
-    self.state %= 2;
 
     //回调点击事件
     if (!self.delegate && self.tapBlock) {//监听块并回调

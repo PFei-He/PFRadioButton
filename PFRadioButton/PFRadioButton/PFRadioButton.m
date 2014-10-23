@@ -39,7 +39,7 @@ typedef void (^tapBlock)(NSString *, NSUInteger);
             radioButton = [[PFMixButton alloc] initWithFrame:CGRectMake(0, self.bounds.origin.y + i * 25, 200, 15) imageFrame:CGRectMake(0, 0, 14, 14) textFrame:CGRectMake(15, 0, 200, 15)];
             radioButton.text = textArray[i];
             radioButton.tag = i;
-            if (i == 0) radioButton.state = PFMixButtonStateSelected;
+            if (i == 0) radioButton.selected = YES;
             [radioButton didSelect:^(PFMixButton *button) {
                 [self buttonTap:button];
             }];
@@ -64,9 +64,9 @@ typedef void (^tapBlock)(NSString *, NSUInteger);
 
     for (int i = 0; i < radioButtonCount.count; i++) {//获取被点击的按钮
         PFMixButton *button = [radioButtonCount objectAtIndex:i];
-        button.state = PFMixButtonStateNormal;
+        button.selected = NO;
     }
-    button.state = PFMixButtonStateSelected;
+    button.selected = YES;
 }
 
 #pragma mark - Public Methods
