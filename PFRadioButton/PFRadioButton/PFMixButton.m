@@ -1,16 +1,16 @@
 //
-//  PFImageTextButton.m
+//  PFMixButton.m
 //  PFRadioButton
 //
-//  Created by PFei_He on 14-10-22.
+//  Created by PFei_He on 14-10-23.
 //  Copyright (c) 2014年 PFei_He. All rights reserved.
 //
 
-#import "PFImageTextButton.h"
+#import "PFMixButton.h"
 
-typedef void(^tapBlock)(PFImageTextButton *);
+typedef void(^tapBlock)(PFMixButton *);
 
-@interface PFImageTextButton ()
+@interface PFMixButton ()
 {
     UIView          *background;    //背景
     UILabel         *textLabel;     //文字
@@ -26,7 +26,7 @@ typedef void(^tapBlock)(PFImageTextButton *);
 
 @end
 
-@implementation PFImageTextButton
+@implementation PFMixButton
 
 #pragma mark - Initialization
 
@@ -61,7 +61,7 @@ typedef void(^tapBlock)(PFImageTextButton *);
         [self addSubview:textLabel];
 
         //设置选择状态为普通
-        _state = PFImageTextButtonStateNormal;
+        _state = PFMixButtonStateNormal;
     }
     return self;
 }
@@ -76,7 +76,7 @@ typedef void(^tapBlock)(PFImageTextButton *);
 }
 
 //按钮状态的setter方法
-- (void)setState:(PFImageTextButtonState)state
+- (void)setState:(PFMixButtonState)state
 {
     if(_state != state)
     {
@@ -95,9 +95,9 @@ typedef void(^tapBlock)(PFImageTextButton *);
         _circleLayer.bounds = bounds;
 
         //设置选择状态
-        if(state == PFImageTextButtonStateNormal) {//普通
+        if(state == PFMixButtonStateNormal) {//普通
             _circleLayer.backgroundColor = [UIColor whiteColor].CGColor;
-        } else if (state == PFImageTextButtonStateSelected){//选中
+        } else if (state == PFMixButtonStateSelected){//选中
             _circleLayer.backgroundColor = [UIColor darkGrayColor].CGColor;
         }
 
@@ -111,7 +111,7 @@ typedef void(^tapBlock)(PFImageTextButton *);
 #pragma mark - Public Methods
 
 //点击事件
-- (void)didSelect:(void (^)(PFImageTextButton *))block
+- (void)didSelect:(void (^)(PFMixButton *))block
 {
     if (block) self.tapBlock = block, block = nil;
 }
@@ -149,12 +149,12 @@ typedef void(^tapBlock)(PFImageTextButton *);
 }
 
 /*
-// Only override drawRect: if you perform custom drawing.
-// An empty implementation adversely affects performance during animation.
-- (void)drawRect:(CGRect)rect
-{
-    // Drawing code
-}
-*/
+ // Only override drawRect: if you perform custom drawing.
+ // An empty implementation adversely affects performance during animation.
+ - (void)drawRect:(CGRect)rect
+ {
+ // Drawing code
+ }
+ */
 
 @end

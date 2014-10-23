@@ -7,7 +7,7 @@
 //
 
 #import "PFRadioButton.h"
-#import "PFImageTextButton.h"
+#import "PFMixButton.h"
 
 static const NSMutableArray *radioButtonCount;
 static const NSMutableArray *titleCount;
@@ -16,7 +16,7 @@ typedef void (^tapBlock)(NSString *, NSUInteger);
 
 @interface PFRadioButton ()
 {
-    PFImageTextButton *radioButton;  //单选按钮
+    PFMixButton *radioButton;  //单选按钮
 }
 
 ///点击事件
@@ -36,11 +36,11 @@ typedef void (^tapBlock)(NSString *, NSUInteger);
         titleCount = [[NSMutableArray alloc] init];
 
         for (int i = 0; i < number; i++) {//创建按钮和文本
-            radioButton = [[PFImageTextButton alloc] initWithFrame:CGRectMake(0, self.bounds.origin.y + i * 25, 200, 15) imageFrame:CGRectMake(0, 0, 14, 14) textFrame:CGRectMake(15, 0, 200, 15)];
+            radioButton = [[PFMixButton alloc] initWithFrame:CGRectMake(0, self.bounds.origin.y + i * 25, 200, 15) imageFrame:CGRectMake(0, 0, 14, 14) textFrame:CGRectMake(15, 0, 200, 15)];
             radioButton.text = textArray[i];
             radioButton.tag = i;
-            if (i == 0) radioButton.state = PFImageTextButtonStateSelected;
-            [radioButton didSelect:^(PFImageTextButton *button) {
+            if (i == 0) radioButton.state = PFMixButtonStateSelected;
+            [radioButton didSelect:^(PFMixButton *button) {
                 [self buttonTap:button];
             }];
             [radioButtonCount addObject:radioButton];
@@ -54,7 +54,7 @@ typedef void (^tapBlock)(NSString *, NSUInteger);
 #pragma mark - Events Methods
 
 //点击事件
-- (void)buttonTap:(PFImageTextButton *)button
+- (void)buttonTap:(PFMixButton *)button
 {
     if (!self.delegate && self.tapBlock) {//监听块并回调
         self.tapBlock(titleCount[button.tag], button.tag);
@@ -63,10 +63,10 @@ typedef void (^tapBlock)(NSString *, NSUInteger);
     }
 
     for (int i = 0; i < radioButtonCount.count; i++) {//获取被点击的按钮
-        PFImageTextButton *button = [radioButtonCount objectAtIndex:i];
-        button.state = PFImageTextButtonStateNormal;
+        PFMixButton *button = [radioButtonCount objectAtIndex:i];
+        button.state = PFMixButtonStateNormal;
     }
-    button.state = PFImageTextButtonStateSelected;
+    button.state = PFMixButtonStateSelected;
 }
 
 #pragma mark - Public Methods
