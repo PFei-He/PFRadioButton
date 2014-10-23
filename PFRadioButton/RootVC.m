@@ -30,7 +30,7 @@
 
     PFRadioButton *radioButton = [[PFRadioButton alloc] initWithFrame:CGRectMake(0, 50, 320, 80) number:3 textArray:@[@"abc", @"123", @"一二三"]];
     [radioButton didSelectItemAtIndexUsingBlock:^(NSString *title, NSUInteger index) {
-        NSLog(@"标题为：%@   点击第：%d个", title, index);
+        NSLog(@"标题为：%@\n点击第%d个", title, index);
     }];
     [self.view addSubview:radioButton];
 }

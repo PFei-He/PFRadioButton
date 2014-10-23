@@ -27,13 +27,13 @@ typedef enum {
 @interface PFMixButton : UIView
 
 ///按钮文字
-@property (nonatomic, copy)     NSString                        *text;
+@property (nonatomic, copy)     NSString                *text;
 
 ///按钮状态
-@property (nonatomic, assign)   PFMixButtonState          state;
+@property (nonatomic, assign)   PFMixButtonState        state;
 
 ///代理
-@property (nonatomic, weak)     id<PFMixButtonDelegate>   delegate;
+@property (nonatomic, weak)     id<PFMixButtonDelegate> delegate;
 
 /**
  *  @brief 设置按钮的尺寸
