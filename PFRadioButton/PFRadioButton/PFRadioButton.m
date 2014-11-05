@@ -56,10 +56,10 @@ typedef void (^tapBlock)(NSString *, NSUInteger);
 //点击事件
 - (void)buttonTap:(PFMixButton *)button
 {
-    if (!self.delegate && self.tapBlock) {//监听块并回调
-        self.tapBlock(titleCount[button.tag], button.tag);
-    } else if ([self.delegate respondsToSelector:@selector(radioButtonTitle:didSelectItemAtIndex:)]) {//监听代理并回调
+    if ([self.delegate respondsToSelector:@selector(radioButtonTitle:didSelectItemAtIndex:)]) {//监听代理并回调
         [self.delegate radioButtonTitle:titleCount[button.tag] didSelectItemAtIndex:button.tag];
+    } else if (self.tapBlock) {//监听块并回调
+        self.tapBlock(titleCount[button.tag], button.tag);
     }
 
     for (int i = 0; i < radioButtonCount.count; i++) {//获取被点击的按钮
@@ -82,8 +82,10 @@ typedef void (^tapBlock)(NSString *, NSUInteger);
 - (void)dealloc
 {
 #if __has_feature(objc_arc)
+    self.tapBlock = nil;
+
+    self.delegate = nil;
 #else
-    [radioButton removeFromSuperview], radioButton = nil;
 #endif
 }
 

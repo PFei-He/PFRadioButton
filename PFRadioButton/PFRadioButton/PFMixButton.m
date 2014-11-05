@@ -103,7 +103,7 @@ typedef void(^tapBlock)(PFMixButton *);
         _circleLayer.bounds = bounds;
 
         //设置选择状态
-        if(state == PFMixButtonStateNormal) {//普通
+        if (state == PFMixButtonStateNormal) {//普通
             _circleLayer.backgroundColor = [UIColor whiteColor].CGColor;
         } else if (state == PFMixButtonStateSelected){//选中
             _circleLayer.backgroundColor = [UIColor darkGrayColor].CGColor;
@@ -140,10 +140,10 @@ typedef void(^tapBlock)(PFMixButton *);
     _circleLayer.opacity = 1.0f;
 
     //回调点击事件
-    if (!self.delegate && self.tapBlock) {//监听块并回调
-        self.tapBlock(self);
-    } else if ([self.delegate respondsToSelector:@selector(didSelect:)]) {//监听代理并回调
+    if ([self.delegate respondsToSelector:@selector(didSelect:)]) {//监听代理并回调
         [self.delegate didSelect:self];
+    } else if (self.tapBlock) {//监听块并回调
+        self.tapBlock(self);
     }
 }
 
@@ -151,6 +151,18 @@ typedef void(^tapBlock)(PFMixButton *);
 - (void)touchesCancelled:(NSSet *)touches withEvent:(UIEvent *)event
 {
     NSLog(@"%@", NSStringFromSelector(_cmd));
+}
+
+#pragma mark - Memory Management
+
+- (void)dealloc
+{
+#if __has_feature(objc_arc)
+    self.tapBlock = nil;
+
+    self.delegate = nil;
+#else
+#endif
 }
 
 /*
