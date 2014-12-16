@@ -1,18 +1,18 @@
 //
-//  PFRadioButtonTests.m
-//  PFRadioButtonTests
+//  DemoTests.m
+//  DemoTests
 //
-//  Created by PFei_He on 14-9-3.
-//  Copyright (c) 2014年 PFei_He. All rights reserved.
+//  Created by PFei_He on 14-12-16.
+//  Copyright (c) 2014年 PF-Lib. All rights reserved.
 //
 
 #import <XCTest/XCTest.h>
 
-@interface PFRadioButtonTests : XCTestCase
+@interface DemoTests : XCTestCase
 
 @end
 
-@implementation PFRadioButtonTests
+@implementation DemoTests
 
 - (void)setUp
 {

@@ -4,7 +4,7 @@
 <dict>
 	<key>SchemeUserState</key>
 	<dict>
-		<key>PFRadioButton.xcscheme</key>
+		<key>Demo.xcscheme</key>
 		<dict>
 			<key>orderHint</key>
 			<integer>0</integer>
@@ -12,12 +12,12 @@
 	</dict>
 	<key>SuppressBuildableAutocreation</key>
 	<dict>
-		<key>CEE600C319B70BFD00353AA7</key>
+		<key>CE355D651A3FDA8800502E11</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>CEE600DE19B70BFD00353AA7</key>
+		<key>CE355D801A3FDA8800502E11</key>
 		<dict>
 			<key>primary</key>
 			<true/>

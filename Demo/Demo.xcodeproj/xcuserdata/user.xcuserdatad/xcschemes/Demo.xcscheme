@@ -14,10 +14,10 @@
             buildForAnalyzing = "YES">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "CEE600C319B70BFD00353AA7"
-               BuildableName = "PFRadioButton.app"
-               BlueprintName = "PFRadioButton"
-               ReferencedContainer = "container:PFRadioButton.xcodeproj">
+               BlueprintIdentifier = "CE355D651A3FDA8800502E11"
+               BuildableName = "Demo.app"
+               BlueprintName = "Demo"
+               ReferencedContainer = "container:Demo.xcodeproj">
             </BuildableReference>
          </BuildActionEntry>
       </BuildActionEntries>
@@ -32,20 +32,20 @@
             skipped = "NO">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "CEE600DE19B70BFD00353AA7"
-               BuildableName = "PFRadioButtonTests.xctest"
-               BlueprintName = "PFRadioButtonTests"
-               ReferencedContainer = "container:PFRadioButton.xcodeproj">
+               BlueprintIdentifier = "CE355D801A3FDA8800502E11"
+               BuildableName = "DemoTests.xctest"
+               BlueprintName = "DemoTests"
+               ReferencedContainer = "container:Demo.xcodeproj">
             </BuildableReference>
          </TestableReference>
       </Testables>
       <MacroExpansion>
          <BuildableReference
             BuildableIdentifier = "primary"
-            BlueprintIdentifier = "CEE600C319B70BFD00353AA7"
-            BuildableName = "PFRadioButton.app"
-            BlueprintName = "PFRadioButton"
-            ReferencedContainer = "container:PFRadioButton.xcodeproj">
+            BlueprintIdentifier = "CE355D651A3FDA8800502E11"
+            BuildableName = "Demo.app"
+            BlueprintName = "Demo"
+            ReferencedContainer = "container:Demo.xcodeproj">
          </BuildableReference>
       </MacroExpansion>
    </TestAction>
@@ -61,10 +61,10 @@
       <BuildableProductRunnable>
          <BuildableReference
             BuildableIdentifier = "primary"
-            BlueprintIdentifier = "CEE600C319B70BFD00353AA7"
-            BuildableName = "PFRadioButton.app"
-            BlueprintName = "PFRadioButton"
-            ReferencedContainer = "container:PFRadioButton.xcodeproj">
+            BlueprintIdentifier = "CE355D651A3FDA8800502E11"
+            BuildableName = "Demo.app"
+            BlueprintName = "Demo"
+            ReferencedContainer = "container:Demo.xcodeproj">
          </BuildableReference>
       </BuildableProductRunnable>
       <AdditionalOptions>
@@ -79,10 +79,10 @@
       <BuildableProductRunnable>
          <BuildableReference
             BuildableIdentifier = "primary"
-            BlueprintIdentifier = "CEE600C319B70BFD00353AA7"
-            BuildableName = "PFRadioButton.app"
-            BlueprintName = "PFRadioButton"
-            ReferencedContainer = "container:PFRadioButton.xcodeproj">
+            BlueprintIdentifier = "CE355D651A3FDA8800502E11"
+            BuildableName = "Demo.app"
+            BlueprintName = "Demo"
+            ReferencedContainer = "container:Demo.xcodeproj">
          </BuildableReference>
       </BuildableProductRunnable>
    </ProfileAction>
